@@ -6,6 +6,8 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="node_modules/chartist/dist/chartist.min.css">
+	<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="shower list">
 
@@ -15,50 +17,207 @@
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<div class="title-wrapper">
+			<h2>Trening na redukcję</h2>
+			<h3>jak spalić kilobajty</h3>
+			<p><a href="https://github.com/pawelkondraciuk">Paweł Kondraciuk</a></p>
+		</div>
 		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
+			<img class="cover" src="pictures/cover.jpeg" alt="Hands on the orange typewriter in a park">
 		</figure>
 		<style>
-			#cover h2 {
-				margin:30px 0 0;
+			#cover .title-wrapper {
+				background-color: rgba(0,0,0,0.55);
+				padding: 15px 0;
+				margin-top: 10px;
+			}
+			#cover h2, #cover h3 {
+				margin: 0;
 				color:#FFF;
 				text-align:center;
+			}
+			#cover h2 {
 				font-size:70px;
-				}
+			}
+			#cover h3 {
+				font-size:50px;
+				line-height: 60px;
+			}
 			#cover p {
 				margin:10px 0 0;
 				text-align:center;
 				color:#FFF;
 				font-style:italic;
 				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
+			}
+			#cover p a {
+				color:#FFF;
+			}
 		</style>
 	</section>
 
 	<section class="slide">
+		<img src="pictures/usage.png" width="100%"/>
+	</section>
+
+	<section class="slide">
+		<div class="ct-chart ct-golden-section"></div>
+
+		<p class="note">https://whatdoesmysitecost.com</p>
+		<style>
+			.ct-chart {
+				/*height: 80%;*/
+			}
+		</style>
+	</section>
+
+	https://webmasters.googleblog.com/2016/03/continuing-to-make-web-more-mobile.html
+
+	<section class="slide">
 		<h2>Shower key features</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
+			<li>Niski współczynnik konwersji</li>
+			<li>UX przede wszystkim</li>
+			<li>wolna strona = niski UX</li>
 		</ol>
 		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
 	</section>
 
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+		Poniedziałek - robimy plecy
+		Optymalizacja serwera
+	</section>
+
+	<section class="slide">
+		<h2>Cache: brak</h2>
+		<pre class="no-number">
+			<code class="mark">GET /index.html HTTP/1.1</code>
+			<code class="mark"></code>
+		</pre>
+		<ol>
+			<li class="next">Przeglądarka: Hej! Czy masz plik index.html?</li>
+			<li class="next">Serwer: (sprawdza...)</li>
+			<li class="next">Serwer: Pewnie stary, jest tutaj.</li>
+			<li class="next">Przeglądarka: Spoko, pobieram i zaraz pokaże go użytkownikowi.</li>
+		</ol>
+	</section>
+
+	
+	<section class="slide">
+		<h2>Cache: Expires</h2>
+		<pre class="no-number">
+			<code class="mark">GET /logo.png HTTP/1.1</code>
+			<code class="mark">Expires: Tue, 17 May 2018 18:00:00 GMT</code>
+		</pre>
+		<ol>
+			<li class="next">Przeglądarka: Hmm... Czy jest przed 17 maja 2018 roku?</li>
+			<li class="next">Przeglądarka: Pokaże zatem użytkownikowi plik z pamięci podręcznej.</li>
+		</ol>
+		<p class="note next">Conajmniej miesiąc, zalecany rok.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Cache-control - polityka buforowania</h2>
+		<table>
+			<tr class="next">
+				<td scope="row">public</td>
+				<td>Przeglądarka klienta i serwery pośrednie</td>
+			</tr>
+			<tr class="next">
+				<td scope="row">private</td>
+				<td>Przeglądarka klienta</td>
+			</tr>
+			<tr class="next">
+				<td scope="row">no-store</td>
+				<td>Odpowiedzi nie wolno buforować</td>
+			</tr>
+		</table>
+		<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" class="note next">
+			https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
+		</a>
+	</section>
+
+	<section class="slide">
+		<h2>Keep-Alive</h2>
+		<pre class="no-number">
+			<code class="mark">Keep-Alive: timeout=15, max=100</code>
+			<code></code>
+		</pre>
+		<ul>
+			<li class="next"><mark>timeout</mark> to czas po jakim połączenie zostanie zamknięte jeśli nic nie zostanie wysłane</li>
+			<li class="next"><mark>max</mark> to maksymalna ilość żądań jakie klient może wykonać</li>
+			<li class="next">Oszczędzamy czas tylko na połączeniu, zasoby nie są pobierane równolegle</li>
+		</ul>
+		<p class="note next">Nginx potrafi utrzymać 10 000 połączeń przy pomocy zaledwie 2,5 MB RAM</p>
+	</section>
+
+	<section class="slide">
+		<h2>Kompresja GZip</h2>
+		<ul>
+			<li>Odpowiedź zmniejszona do 70% (większość danych powtarzalny tekst)</li>
+			<li>Bardzo wysoki współczynnik koszt/zysk</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>CDN</h2>
+		<ul>
+			<li>Poprawa UX pod względem szybkości ładowania zasobów</li>
+			<li>"Load balancer" plików statycznych na podstawie lokalizacji</li>
+			<li>Proste w implementacji, wystarczy wskazać pliki, które mają być mirrorowane</li>
+			<li>Płatny więc sprawdzi się głównie w przypadku bardzo dużego ruchu na stronie</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>Środa - robimy klatę</h2>
+		Optymalizujemy aplikację pod przyglądarkę
+	</section>
+
+	<section class="slide">
+		<h2>Jak przeglądarka renderuje stronę</h2>
+		<ol>
+			<li>HTML -> DOM</li>
+			<li>CSS -> CSSOM</li>
+			<li>Wykonywane są skrypty</li>
+			<li>DOM + CSSOM => drzewa renderowania</li>
+			<li>Pozycjonowanie elementów</li>
+			<li>Rysowanie strony</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Minifikacja i obfuskacja</h2>
+		<ul>
+			<li>Usunięcie zbędnych komentarzy i spacji</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Optymalizacja index.html</h2>
+		CSS na górę, JS na dół + loader
+	</section>
+
+	<section class="slide">
+		<h2>Optymalizacja obrazków</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Piątek - robimy cardio</h2>
+		lazy loading, podział na chunki
+		server side rendering
+		change detection
+		tree shaking
+	</section>
+
+	<section class="slide">
+		<h2>Dieta</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Linki</h2>
+		<a href="https://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/">Cache</a>
+		<a href="https://developers.google.com/speed/pagespeed/">Page speed</a>
 	</section>
 
 	<section class="slide">
@@ -199,6 +358,8 @@
 	<div class="progress"></div>
 
 	<script src="node_modules/shower-core/shower.min.js"></script>
+	<script src="node_modules/chartist/dist/chartist.min.js"></script>
+	<script src="assets/charts.js"></script>
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
 
 </body>
