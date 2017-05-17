@@ -6,6 +6,8 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="node_modules/chartist/dist/chartist.min.css">
+	<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="shower list">
 
@@ -15,190 +17,789 @@
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<div class="title-wrapper">
+			<h2>Trening na redukcję</h2>
+			<h3>jak spalić kilobajty</h3>
+			<p><a href="https://pawelkondraciuk.github.io/" target="_blank">Paweł Kondraciuk</a></p>
+		</div>
 		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
+			<img class="cover" src="pictures/cover.jpeg" alt="Hands on the orange typewriter in a park">
 		</figure>
 		<style>
-			#cover h2 {
-				margin:30px 0 0;
+			#cover .title-wrapper {
+				background-color: rgba(0,0,0,0.55);
+				padding: 15px 0;
+				margin-top: 10px;
+			}
+			#cover h2, #cover h3 {
+				margin: 0;
 				color:#FFF;
 				text-align:center;
+			}
+			#cover h2 {
 				font-size:70px;
-				}
+			}
+			#cover h3 {
+				font-size:50px;
+				line-height: 60px;
+			}
 			#cover p {
 				margin:10px 0 0;
 				text-align:center;
 				color:#FFF;
 				font-style:italic;
 				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
+			}
+			#cover p a {
+				color:#FFF;
+			}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
+		<h2>Specyfikacja</h2>
+		<ul>
+			<li class="next">Angular 4.0.3
 				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
+					<li>7 komponentów (z czego jeden dość spory)</li>
+					<li>4 ścieżki główne i 2 dzieci</li>
 				</ul>
 			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
+			<li class="next">Rxjs
+				<ul>
+					<li>Observable</li>
+				</ul>
+			</li>
+			<li class="next">Lodash
+				<ul>
+					<li>isArray</li>
+				</ul>
+			</li>
+		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Serious citations</h2>
+		<h2>Specyfikacja</h2>
+		<img src="pictures/spec.png" width="100%" />
+	</section>
+
+	<section class="slide">
+		<img src="pictures/fat-cat.gif" class="height" />
+	</section>
+
+	<section class="slide">
+		<h2>Statystyki</h2>
+		<ul>
+			<li class="next">47% użytkowników oczekuje, że kot przejdzie poniżej dwóch sekund</li>
+			<li class="next">40% sobie pójdzie jeśli to trwa powyżej 3 sekund</li>
+			<li class="next">51% użytkowników mobilnych trafiło w miejsce, gdzie kot się zablokował</li>
+			<li class="next">75% nie wróci w miejsce, gdzie kot przechodzi powyżej 4 sekund</li>
+		</ul>
+		<p class="note next">źródło: Akamai 10For10, KissMetrics</p>
+	</section>
+
+	<section class="slide">
+		<h2>Każda sekunda to</h2>
+		<ul>
+			<li class="next">11% mniej wyświetleń</li>
+			<li class="next">16% obniżona satysfakcja użytkowników</li>
+			<li class="next">7% niższy współczynnik konwersji</li>
+			<li class="next">Strata pieniędzy $$</li>
+		</ul>
+		<p class="note next">źródło: Amazon, Walmart, KissMetrics</p>
+	</section>
+
+	<section class="slide">
+		<h2>To nie wszystko</h2>
+		<ul>
+			<li class="next"><a href="https://productforums.google.com/forum/#!topic/webmasters/x-tAmtvK9iA/discussion" target="_blank">Negatywny wpływ na ranking Google</a></li>
+			<li class="next">Narastająca frustracja</li>
+			<li class="next">Niższe zaufanie do produktu/usługi</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Udziały urządzeń w internecie</h2>
+		<div class="ct-chart ct-chart-line ct-chart-usage"></div>
+		<p class="note">źródło: <a href="http://gs.statcounter.com/platform-market-share/desktop-mobile-tablet#monthly-200901-201705" target="_blank">StatCounter (2.5mln stron)</a></p>
+		<style>
+			.ct-chart {
+				height: 65%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Czas pobierania 100KB</h2>
+		<div class="ct-chart ct-chart-bar ct-chart-load-time"></div>
+		<p class="note reduced-speed">* Najczęściej stosowany lejek</p>
+		<style>
+			p.reduced-speed {
+				font-size: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide middle with-img">
+		<div class="middle">
+			<p>Angular</p>
+			4MB => 10min @ 3G
+		</div>
+		<img src="pictures/imout.gif" />
+	</section>
+
+	<section class="slide">
+		<h2>Co wpływa na szybkość ładowania strony</h2>
+		<ul>
+			<li class="next"><b>Waga</b></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Minifikacja, obfuskacja i optymalizacja</h2>
+		<ul>
+			<li class="next">Skrócenie nazw</li>
+			<li class="next">Usunięcie komentarzy</li>
+			<li class="next">Usunięcie martwego kodu</li>
+			<li class="next">Optymalizacja pętli</li>
+			<li class="next">Optymalizacja wartości boolowskich (tautologia)</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Minifikacja - Webpack + UglifyJsPlugin</h2>
+		<pre class="no-number">
+			<code>new UglifyJsPlugin({</code>
+			<code>  beautify: false,</code>
+      <code>  output: { comments: false },</code>
+      <code>  compress: {</code>
+      <code>    unused: true,</code>
+      <code>    dead_code: true</code>
+      <code>  }</code>
+      <code>})</code>
+		</pre>
+	</section>
+
+	<section class="slide middle with-img">
+		<div class="middle">
+			<p>Angular + UglifyJs</p>
+			1.5MB => 3:51min @ 3G
+		</div>
+		<img src="pictures/wat.gif" />
+	</section>
+
+	<section class="slide">
+		<h2>Analiza struktury aplikacji</h2>
+		<ul>
+			<li class="next"><a href="http://webpack.github.io/analyse" target="_blank">http://webpack.github.io/analyse</a>
+				<ul>
+					<li class="next">webpack --profile --json > stats.json</li>
+					<li class="next">Graf zależności</li>
+					<li class="next">Szczegółowe statystyki</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
 		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
+			<img class="cover" src="pictures/analyse-graph.png" alt="Graph analyse">
 		</figure>
 	</section>
 
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>Analiza struktury aplikacji</h2>
+		<ul>
+			<li><a href="http://webpack.github.io/analyse" target="_blank">http://webpack.github.io/analyse</a>
+				<ul>
+					<li>webpack --profile --json > stats.json</li>
+					<li>Graf zależności</li>
+					<li>Szczegółowe statystyki</li>
+				</ul>
+			</li>
+			<li class="next">source-map-explorer
+				<ul>
+					<li class="next">npm install source-map-explorer</li>
+					<li class="next">source-map-explorer main.bundle.js main.bundle.js.map</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/no-opt-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Wszystko jest pakowane</h2>
+		<pre class="no-number">
+			<code>// maths.js</code>
+			<code>export function <mark class="important">square(x)</mark> { return x * x; }</code>
+			<code>export function cube(x) { return x * x * x; }</code>
+			<code>// main.js</code>
+			<code>import { cube } from './maths.js';</code>
+			<code>console.log(cube(5)); // 125</code>
+		</pre>
+	</section>
+
+	<section class="slide full">
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>function(module, exports) { // CommonJS</code>
+			<code>	Object.defineProperty(exports, "__esModule", {</code>
+			<code>		value: true</code>
+			<code>	});</code>
+			<code>	<mark class="important">exports.square = square;</mark></code>
+			<code>	exports.cube = cube;</code>
+			<code>	function square(x) {</code>
+			<code>		return x * x;</code>
+			<code>	}</code>
+			<code>	function cube(x) {</code>
+			<code>		return x * x * x;</code>
+			<code>	}</code>
+			<code>}</code>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<img src="pictures/thinking.gif" width="100%"/>
 	</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
+	<section class="slide">
+		<h2>Tree Shaking</h2>
+		<img src="pictures/graph.png" class="next graph" />
 		<style>
-			#picture h2 {
-				color:#FFF;
-				}
+			.graph {
+				padding-top: 50px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>Tree Shaking</h2>
+		<ul>
+			<li class="next">Bundler usuwa <b>referencje</b> nieużywanego kodu</li>
+			<li class="next">Minifikator usuwa kod</li>
+			<li class="next">Webpack 2.x + ES6 (import/export)</li>
+			<li class="next">Babel</li>
+		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Inner navigation</h2>
+		<h2>Tree Shaking - Webpack</h2>
+		<pre class="no-number">
+      <code>test: /\.js$/,</code>
+      <code>exclude: /node_modules/,</code>
+      <code>loader: 'babel-loader',</code>
+      <code>options: {</code>
+      <code>  presets: [</code>
+      <code>    [ 'es2015', { <mark class="important">modules: false</mark> } ] // default CommonJS</code>
+      <code>  ]</code>
+      <code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide full">
+		<pre>
+			<code>function(module, exports, __webpack_require__) {</code>
+			<code>	// ES6</code>
+			<code>	/* harmony export */ exports["cube"] = cube;</code>
+			<code>	/* unused harmony export square */;</code>
+			<code>	function square(x) {</code>
+			<code>		return x * x;</code>
+			<code>	}</code>
+			<code>	function cube(x) {</code>
+			<code>		return x * x * x;</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/tree-shaking-map.png" alt="Tree shaking">
+		</figure>
+	</section>
+
+	<section class="slide middle with-img">
+		<div class="middle">
+			<p>Angular + UglifyJs + Tree Shaking</p>
+			1.3MB => 3:25min @ 3G
+		</div>
+		<img src="pictures/smile.gif"/>
+	</section>
+
+	<section class="slide">
+		<h2>Prekompilacja (AoT)</h2>
+		<ul>
+			<li class="next">Mniejszy rozmiar aplikacji - brak @angular/compiler</li>
+			<li class="next">Szybsze renderowanie komponentu - szablony są już skompilowane</li>
+			<li class="next">Błędy w szablonach wykryte podczas kompilacji</li>
+			<li class="next">Bardziej bezpieczny - szablony nie są interpolowane dynamicznie</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Prekompilacja (AoT) - @ngtools/webpack</h2>
+		<pre class="no-number">
+      <code>let AotPlugin = require('@ngtools/webpack').AotPlugin;</code>
+			<code>rules: [{ test: /\.ts/, use: '@ngtools/webpack' }]</code>
+			<code>plugins: [</code>
+			<code>	new AotPlugin({</code>
+			<code>		tsConfigPath: path.resolve('tsconfig.json'),</code>
+			<code>		entryModule: path.resolve('app.module#AppModule')</code>
+			<code>	})</code>
+			<code>]</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Prekompilacja (AoT) - czego nie robić</h2>
+		<ul>
+			<li class="next">
+				<s>template: require('./app.component.ts')</s>
+				<span class="next"> templateUrl: './app.component.ts'</span>
+			</li>
+			<li class="next">
+				<s>form.controls.name</s>
+				<span class="next"> form.get('name')</span>
+			</li>
+			<li class="next">
+				<s>form.errors?.required</s>
+				<span class="next"> form.hasError('required')</span>
+			</li>
+			<li class="next">@Input, @Output, @HostBinding muszą być publiczne</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/aot-map.png" alt="Ahead of time">
+		</figure>
+	</section>
+
+	<section class="slide middle with-img">
+		<div class="middle">
+			<p>Angular + UglifyJs + Tree Shaking + AoT</p>
+			0.9MB => 2:20min @ 3G
+		</div>
+		<img src="pictures/thumbup.gif" />
+	</section>
+
+	<section class="slide">
+		<h2>Kompresja GZip</h2>
+		<ul>
+			<li class="next">Odpowiedź zmniejszona do 80% (większość danych to powtarzalny tekst)</li>
+		</ul>
+		<pre class="no-number next">
+			<code><mark class="important">.selector</mark> { /* ... */ }</code>
+			<code><mark class="important">.selector</mark> .child-selector { /* ... */ }</code>
+		</pre>
+		<table class="next">
+			<tr>
+				<td scope="row">bootstrap.min.css</td>
+				<td>118KB</td>
+			</tr>
+			<tr>
+				<td scope="row">bootstrap.min.css.gz</td>
+				<td>19KB</td>
+			</tr>
+			<tr>
+				<th scope="row">Różnica</th>
+				<td><mark>83,9%</mark></td>
+			</tr>
+		</table>
+		<ul>
+			<li class="next">Bardzo wysoki współczynnik zysk/koszt</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>compression-webpack-plugin</h2>
+		<pre class="no-numbers">
+			<code>new CompressionPlugin({</code>
+      <code>  regExp: /\.css$|\.html$|\.js$$/,</code>
+      <code>  threshold: 2 * 1024</code>
+      <code>})</code>
+		</pre>
+		<pre class="no-numbers next">
+			<code>AddOutputFilterByType DEFLATE text/javascript</code>
+			<code>AddOutputFilterByType DEFLATE text/css</code>
+			<code>AddOutputFilterByType DEFLATE text/html</code>
+		</pre>
+	</section>
+
+	<section class="slide middle with-img">
+		<div class="middle">
+			<p>Angular + UglifyJs + Tree Shaking + AoT + GZip</p>
+			158KB => 0:24min @ 3G
+		</div>
+		<img src="pictures/party.gif" />
+	</section>
+
+	<section class="slide">
+		<h2>Closure*</h2>
+		<ul>
+			<li class="next">Agresywna optymalizacja</li>
+			<li class="next">Trzeba pisać kod z myślą o Closure</li>
+			<li class="next">Łatwo o biedę</li>
+		</ul>
+		<p class="note next">* Do codziennego użytku wystarczy UglifyJS</p>
+	</section>
+
+	<section class="slide">
+		<pre class="no-number">
+			<code>function square(x) {</code>
+			<code>	return x * x;</code>
+			<code>}</code>
+			<code>function cube(x) {</code>
+			<code>	return x * x * x;</code>
+			<code>}</code>
+			<code>console.log(cube(5));</code>
+		</pre>
+		<pre class="no-number next">
+			<code class="mark">console.log(125);</code>
+			<code></code>
+		</pre>
+		<p class="note next">
+			<a href="https://closure-compiler.appspot.com/home">Spróbuj sam :)</a>
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>Podsumowanie</h2>
+		<table>
+			<tr>
+				<th>Optymalizacja</th>
+				<th>Waga</th>
+				<th>Czas pobierania @ 3G</th>
+			</tr>
+			<tr class="next">
+				<td>Brak</td>
+				<td>4186KB (100%)</td>
+				<td>10:47min</td>
+			</tr>
+			<tr class="next">
+				<td>Minifikacja</td>
+				<td>1449KB (34,62%)</td>
+				<td>3:43min</td>
+			</tr>
+			<tr class="next">
+				<td>Tree shaking</td>
+				<td>1315KB (31,41%)</td>
+				<td>3:23min</td>
+			</tr>
+			<tr class="next">
+				<td>Prekompilacja</td>
+				<td>907KB (21,67%)</td>
+				<td>2:20min</td>
+			</tr>
+			<tr class="next">
+				<td>Gzip</td>
+				<td>158KB (3,77%)</td>
+				<td>0:24sec</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Co wpływa na szybkość ładowania strony</h2>
+		<ul>
+			<li>Waga</li>
+			<li class="next"><b>Kondycja połączenia</b></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<pre class="no-number">
+			<code class="mark">GET /index.html HTTP/1.1</code>
+			<code class="mark"></code>
+		</pre>
 		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
+			<li class="next">Przeglądarka: Hej! Czy masz plik index.html?</li>
+			<li class="next">Serwer: (sprawdza...)</li>
+			<li class="next">Serwer: Pewnie stary, jest tutaj.</li>
+			<li class="next">Przeglądarka: Spoko, pobieram i zaraz pokaże go użytkownikowi.</li>
+		</ol>
+		<p class="note next">HTTP/1.1: co najwyżej 2 równoczesne połączenia per host</p>
+	</section>
+
+	<section class="slide">
+		<h2>Cache</h2>
+		<pre class="no-number next">
+			<code class="mark">GET /logo.png HTTP/1.1</code>
+			<code class="mark">Expires: Tue, 17 May 2018 18:00:00 GMT</code>
+		</pre>
+		<ol>
+			<li class="next">Przeglądarka: Hmm... Czy jest przed 17 maja 2018 roku?</li>
+			<li class="next">Przeglądarka: Pokaże zatem użytkownikowi plik z pamięci podręcznej.</li>
+		</ol>
+		<p class="note next">Google radzi: conajmniej miesiąc, zalecany rok.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Cache-control - polityka buforowania</h2>
+		<table>
+			<tr class="next">
+				<td scope="row">public</td>
+				<td>Przeglądarka klienta i serwery pośrednie</td>
+			</tr>
+			<tr class="next">
+				<td scope="row">private</td>
+				<td>Przeglądarka klienta</td>
+			</tr>
+			<tr class="next">
+				<td scope="row">no-store</td>
+				<td>Odpowiedzi nie wolno buforować</td>
+			</tr>
+		</table>
+		<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" class="note next" target="_blank">
+			https://developers.google.com/
+		</a>
+	</section>
+
+	<section class="slide">
+		<h2>Cache - .htaccess</h2>
+		<pre class="no-number">
+			<code>&lt;filesMatch &quot;.(jpg|jpeg|png|gif|ico)$&quot;&gt;</code>
+			<code>Header set Cache-Control &quot;max-age=31536000, public&quot;</code>
+			<code>&lt;/filesMatch&gt;</code>
+			<code></code>
+			<code>&lt;filesMatch &quot;.(css|js)$&quot;&gt;</code>
+			<code>Header set Cache-Control &quot;max-age=2628000, public&quot;</code>
+			<code>&lt;/filesMatch&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Keep-Alive</h2>
+		<pre class="no-number">
+			<code class="mark">Keep-Alive: timeout=15, max=100</code>
+			<code></code>
+		</pre>
+		<ul>
+			<li class="next"><mark>timeout</mark> to czas (w sekundach) po jakim połączenie zostanie zamknięte jeśli nic nie zostanie wysłane</li>
+			<li class="next"><mark>max</mark> to maksymalna ilość żądań jakie klient może wykonać</li>
+			<li class="next">Oszczędzamy czas tylko na połączeniu, zasoby nie są pobierane równolegle</li>
+		</ul>
+		<p class="note next">Nginx potrafi utrzymać 10 000 połączeń przy pomocy zaledwie 2,5 MB RAM</p>
+	</section>
+
+	<section class="slide">
+		<h2>Content Delivery Network</h2>
+		<ul>
+			<li class="next">Szybsze ładowanie zasobów</li>
+			<li class="next">"Load balancer" plików statycznych</li>
+			<li class="next">Proste w implementacji</li>
+			<li class="next">Płatne
+				<ul>
+					<li class="next">$0.08 - $0.20 / 1GB</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Podsumowanie</h2>
+	  HSDPA, DL: 3.5Mb/s, UP: 2.1Mb/s, Waga: 525KB
+		<table>
+			<tr>
+				<th>Optymalizacja</th>
+				<th>Czas dociagania</th>
+			</tr>
+			<tr>
+				<td>Brak</td>
+				<td>~0.8s - 0.9s</td>
+			</tr>
+			<tr class="next">
+				<td>Keep-alive (timeout=10, max=499)</td>
+				<td>~0.5s - 0.65s</td>
+			</tr>
+			<tr class="next">
+				<td>Cache</td>
+				<td>~0.08s-0.1s (165B)</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Co wpływa na szybkość ładowania strony</h2>
+		<ul>
+			<li>Waga</li>
+			<li>Kondycja połączenia</li>
+			<li class="next"><b>Czas parsowania</b></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Jak przeglądarka renderuje stronę</h2>
+		<ol>
+			<li class="next">HTML -> DOM</li>
+			<li class="next">CSS -> CSSOM</li>
+			<li class="next">Wykonywane są skrypty</li>
+			<li class="next">DOM + CSSOM => drzewa renderowania</li>
+			<li class="next">Pozycjonowanie elementów</li>
+			<li class="next">Malowanie elementów</li>
 		</ol>
 	</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+	<section class="slide">
+		<h2>Optmalizacja HTML</h2>
+		<ul>
+			<li class="next">Style na górę, skrypty na dół</li>
+			<li class="next">Ładowanie tylko tego co jest potrzebne
+				<ul>
+					<li class="next">window.onload = function () { /* ... * / }</li>
+				</ul>
+			</li>
+		</ul>
 	</section>
 
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
+	<section class="slide">
+		<h2>Optymalizacja CSS</h2>
+		<ul>
+			<li class="next">Atrybuty media
+				<ul>
+					<li class="next">Telefony nie są wydajne</li>
+					<li class="next">
+						&lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 800px)&quot; href=&quot;example.css&quot; /&gt;
+					</li>
+				</ul>
+			</li>
+			<li class="next">Unikanie @import</li>
+			<li class="next">Zmniejszenie złożoności selektorów</li>
+			<li class="next">Uproszczanie styli (np. UnCSS)</li>
+		</ul>
 	</section>
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
+	<section class="slide">
+		<h2>Optymalizacja obrazków</h2>
+		<ul>
+			<li class="next">Właściwe rozmiary</li>
+			<li class="next">Odpowiednie formatów plików</li>
+			<li class="next">Ładowanie obrazów przez odpowiednie media query</li>
+			<li class="next">Scalenie kilka obrazów w jeden</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Optymalizacja JavaScript</h2>
+		<ul>
+			<li class="next">
+				Ładowanie skryptów niezależnych od DOM przez async
+				<ul>
+					<li class="next">Nie blokuje głównego wątku</li>
+					<li class="next">Nie można przewidzieć kiedy zostaną uruchomione</li>
+					<li class="next">Google Analytics, Bugsnag</li>
+				</ul>
+			</li>
+			<li class="next">Ładowanie skryptów zależnych od DOM przez defer
+				<ul>
+					<li class="next">Nie blokuje głównego wątku</li>
+					<li class="next">Zostaną uruchomione po załadowaniu DOM</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<img src="pictures/async-vs-defer-twitter.png" width="100%"/>
+	</section>
+
+	<section class="slide">
+		<h2>Lazy loading</h2>
+		<ul>
+			<li class="next">Dociąganie modułów na żądanie</li>
+			<li class="next">...lub pobranie wszystkich po załadowaniu DOM</li>
+			<li class="next">Szybka dostępność strony</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Lazy loading</h2>
+		<pre>
+			<code>const routes: Routes = [</code>
+			<code>	{ path: '', component: Component },</code>
+			<code>	{ </code>
+			<code>		path: 'lazy',</code> 
+			<code>		loadChildren: 'lazy/lazy.module#LazyModule'</code>
+			<code>	}</code>
+			<code>];</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Podsumowanie</h2>
+		<table>
+			<tr>
+				<th>Optymalizacja</th>
+				<th>Czas skryptowania</th>
+			</tr>
+			<tr class="next">
+				<td>Brak</td>
+				<td>~5s</td>
+			</tr>
+			<tr class="mark">
+				<td>Prekompilacja</td>
+				<td>3sek (907KB)</td>
+			</tr>
+			<tr class="mark">
+				<td>Lazy load</td>
+				<td>~600ms (525KB)</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Ogólne podsumowanie</h2>
+		<table>
+			<tr>
+				<th>Optmalizacja</th>
+				<th>Czas do wyrenderowania strony</th>
+			</tr>
+			<tr class="next">
+				<td>Brak</td>
+				<td>~9s</td>
+			</tr>
+			<tr class="next">
+				<td>+ optymalizacja połączenia</td>
+				<td>~6s - 8s</td>
+			</tr>
+			<tr class="next">
+				<td>+ optymalizacja wagi</td>
+				<td>~5s - 6s</td>
+			</tr>
+			<tr class="next">
+				<td>+ optymalizacja skryptowania</td>
+				<td>~0.3s - 0.8s</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Linki</h2>
+		<ul>
+			<li><a href="https://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/" target="_blank">Cache</a></li>
+			<li><a href="https://developers.google.com/speed/pagespeed/" target="_blank">Page speed</a></li>
+			<li><a href="http://2ality.com/2015/12/webpack-tree-shaking.html" target="_blank">Jak działa tree shaking</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Pytania?</h2>
+	</section>
 
 	<div class="progress"></div>
 
 	<script src="shower/shower.min.js"></script>
+	<script src="node_modules/chartist/dist/chartist.js"></script>
+	<script src="assets/legend.js"></script>
+	<script src="assets/createRect.js"></script>
+	<script src="assets/charts.js"></script>
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
 
 </body>
