@@ -92,8 +92,9 @@
 		<ul>
 			<li class="next">47% użytkowników oczekuje, że kot przejdzie poniżej dwóch sekund</li>
 			<li class="next">40% sobie pójdzie jeśli to trwa powyżej 3 sekund</li>
-			<li class="next">51% użytkowników mobilnych trafiło w miejsce, gdzie kot się zablokował</li>
-			<li class="next">75% nie wróci w miejsce, gdzie kot przechodzi powyżej 4 sekund</li>
+			<li class="next">70% użytkowników mobilnych widziało kota, który był wolny</li>
+			<li class="next">51% użytkowników mobilnych widziało kota, który się zablokował</li>
+			<li class="next">75% nie wróci w miejsce, gdzie kot przechodził powyżej 4 sekund</li>
 		</ul>
 		<p class="note next">źródło: Akamai 10For10, KissMetrics</p>
 	</section>
@@ -151,7 +152,9 @@
 	<section class="slide">
 		<h2>Co wpływa na szybkość ładowania strony</h2>
 		<ul>
-			<li class="next"><b>Waga</b></li>
+			<li class="next">Waga</li>
+			<li class="next">Kondycja połączenia</li>
+			<li class="next">Czas przetwarzania</li>
 		</ul>
 	</section>
 
@@ -282,7 +285,7 @@
 	<section class="slide">
 		<h2>Tree Shaking</h2>
 		<ul>
-			<li class="next">Bundler usuwa <b>referencje</b> nieużywanego kodu</li>
+			<li>Bundler usuwa <b>referencje</b> nieużywanego kodu</li>
 			<li class="next">Minifikator usuwa kod</li>
 			<li class="next">Webpack 2.x + ES6 (import/export)</li>
 			<li class="next">Babel</li>
@@ -305,8 +308,8 @@
 
 	<section class="slide full">
 		<pre>
+			<code>// ES6</code>
 			<code>function(module, exports, __webpack_require__) {</code>
-			<code>	// ES6</code>
 			<code>	/* harmony export */ exports["cube"] = cube;</code>
 			<code>	/* unused harmony export square */;</code>
 			<code>	function square(x) {</code>
@@ -501,7 +504,7 @@
 			<tr class="next">
 				<td>Gzip</td>
 				<td>158KB (3,77%)</td>
-				<td>0:24sec</td>
+				<td>0:24min</td>
 			</tr>
 		</table>
 	</section>
@@ -510,7 +513,8 @@
 		<h2>Co wpływa na szybkość ładowania strony</h2>
 		<ul>
 			<li>Waga</li>
-			<li class="next"><b>Kondycja połączenia</b></li>
+			<li><b>Kondycja połączenia</b></li>
+			<li>Czas przetwarzania</li>
 		</ul>
 	</section>
 
@@ -611,7 +615,7 @@
 				<th>Optymalizacja</th>
 				<th>Czas dociagania</th>
 			</tr>
-			<tr>
+			<tr class="next">
 				<td>Brak</td>
 				<td>~0.8s - 0.9s</td>
 			</tr>
@@ -631,7 +635,7 @@
 		<ul>
 			<li>Waga</li>
 			<li>Kondycja połączenia</li>
-			<li class="next"><b>Czas parsowania</b></li>
+			<li><b>Czas parsowania</b></li>
 		</ul>
 	</section>
 
@@ -775,9 +779,14 @@
 			</tr>
 			<tr class="next">
 				<td>+ optymalizacja skryptowania</td>
-				<td>~0.3s - 0.8s</td>
+				<td>~1s</td>
 			</tr>
 		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Specyfikacja</h2>
+		<img src="pictures/full-opt.png" width="100%" />
 	</section>
 
 	<section class="slide">
