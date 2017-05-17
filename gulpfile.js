@@ -29,6 +29,14 @@ gulp.task('prepare', () => {
 		.pipe(replace(
 			/(<script src=")(node_modules\/shower-core\/)(shower.min.js"><\/script>)/g,
 			'$1shower/$3', { skipBinary: true }
+		))
+		.pipe(replace(
+			/(<link rel="stylesheet" href=")(node_modules\/chartist\/dist\/)(chartist.min.css">)/g,
+			'$1chartist/$3', { skipBinary: true }
+		))
+		.pipe(replace(
+			/(<script src=")(node_modules\/chartist\/dist\/)(chartist.min.js"><\/script>)/g,
+			'$1chartist/$3', { skipBinary: true }
 		));
 
 	const core = gulp.src([
@@ -64,7 +72,17 @@ gulp.task('prepare', () => {
 			'$1../../$3', { skipBinary: true }
 		));
 
-	return merge(shower, core, themes)
+	const chartist = gulp.src([
+			'chartist.min.js',
+			'chartist.min.css'
+		], {
+			cwd: 'node_modules/chartist/dist'
+		})
+		.pipe(rename( (path) => {
+			path.dirname = 'chartist/' + path.dirname;
+		}));
+
+	return merge(shower, core, themes, chartist)
 		.pipe(gulp.dest('prepared'));
 
 });
