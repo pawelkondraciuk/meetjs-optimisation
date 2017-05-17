@@ -191,6 +191,10 @@
 	</section>
 
 	<section class="slide">
+		<img src="pictures/inside.gif" class="height" />
+	</section>
+
+	<section class="slide">
 		<h2>Analiza struktury aplikacji</h2>
 		<ul>
 			<li class="next"><a href="http://webpack.github.io/analyse" target="_blank">http://webpack.github.io/analyse</a>
@@ -247,7 +251,7 @@
 	</section>
 
 	<section class="slide full">
-		<pre>
+		<pre class="no-number">
 			<code>function(module, exports) { // CommonJS</code>
 			<code>	Object.defineProperty(exports, "__esModule", {</code>
 			<code>		value: true</code>
@@ -306,7 +310,7 @@
 	</section>
 
 	<section class="slide full">
-		<pre>
+		<pre class="no-number">
 			<code>// ES6</code>
 			<code>function(module, exports, __webpack_require__) {</code>
 			<code>	/* harmony export */ exports["cube"] = cube;</code>
@@ -532,6 +536,20 @@
 	</section>
 
 	<section class="slide">
+		<h2>Keep-Alive</h2>
+		<pre class="no-number">
+			<code class="mark">Keep-Alive: timeout=15, max=100</code>
+			<code></code>
+		</pre>
+		<ul>
+			<li class="next"><mark>timeout</mark> to czas (w sekundach) po jakim połączenie zostanie zamknięte jeśli nic nie zostanie wysłane</li>
+			<li class="next"><mark>max</mark> to maksymalna ilość żądań jakie klient może wykonać</li>
+			<li class="next">Oszczędzamy czas tylko na połączeniu, zasoby nie są pobierane równolegle</li>
+		</ul>
+		<p class="note next">Nginx potrafi utrzymać 10 000 połączeń przy pomocy zaledwie 2,5 MB RAM</p>
+	</section>
+
+	<section class="slide">
 		<h2>Cache</h2>
 		<pre class="no-number next">
 			<code class="mark">GET /logo.png HTTP/1.1</code>
@@ -576,20 +594,6 @@
 			<code>Header set Cache-Control &quot;max-age=2628000, public&quot;</code>
 			<code>&lt;/filesMatch&gt;</code>
 		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Keep-Alive</h2>
-		<pre class="no-number">
-			<code class="mark">Keep-Alive: timeout=15, max=100</code>
-			<code></code>
-		</pre>
-		<ul>
-			<li class="next"><mark>timeout</mark> to czas (w sekundach) po jakim połączenie zostanie zamknięte jeśli nic nie zostanie wysłane</li>
-			<li class="next"><mark>max</mark> to maksymalna ilość żądań jakie klient może wykonać</li>
-			<li class="next">Oszczędzamy czas tylko na połączeniu, zasoby nie są pobierane równolegle</li>
-		</ul>
-		<p class="note next">Nginx potrafi utrzymać 10 000 połączeń przy pomocy zaledwie 2,5 MB RAM</p>
 	</section>
 
 	<section class="slide">
@@ -724,7 +728,7 @@
 
 	<section class="slide">
 		<h2>Lazy loading</h2>
-		<pre>
+		<pre class="no-number">
 			<code>const routes: Routes = [</code>
 			<code>	{ path: '', component: Component },</code>
 			<code>	{ </code>
@@ -784,9 +788,13 @@
 	</section>
 
 	<section class="slide">
-		<h2>Specyfikacja</h2>
 		<img src="pictures/full-opt.png" width="100%" />
 	</section>
+
+	<section class="slide">
+		<img src="pictures/cats.gif" class="height"/>
+	</section>
+
 
 	<section class="slide">
 		<h2>Linki</h2>
