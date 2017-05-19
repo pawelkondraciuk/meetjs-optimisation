@@ -79,7 +79,6 @@
 	</section>
 
 	<section class="slide">
-		<h2>Specyfikacja</h2>
 		<img src="pictures/spec.png" width="100%" />
 	</section>
 
@@ -92,8 +91,9 @@
 		<ul>
 			<li class="next">47% użytkowników oczekuje, że kot przejdzie poniżej dwóch sekund</li>
 			<li class="next">40% sobie pójdzie jeśli to trwa powyżej 3 sekund</li>
-			<li class="next">51% użytkowników mobilnych trafiło w miejsce, gdzie kot się zablokował</li>
-			<li class="next">75% nie wróci w miejsce, gdzie kot przechodzi powyżej 4 sekund</li>
+			<li class="next">70% użytkowników mobilnych widziało kota, który był wolny</li>
+			<li class="next">51% użytkowników mobilnych widziało kota, który się zablokował</li>
+			<li class="next">75% do kota, który przechodził powyżej 4 sekund</li>
 		</ul>
 		<p class="note next">źródło: Akamai 10For10, KissMetrics</p>
 	</section>
@@ -151,7 +151,9 @@
 	<section class="slide">
 		<h2>Co wpływa na szybkość ładowania strony</h2>
 		<ul>
-			<li class="next"><b>Waga</b></li>
+			<li class="next">Waga</li>
+			<li class="next">Kondycja połączenia</li>
+			<li class="next">Czas przetwarzania</li>
 		</ul>
 	</section>
 
@@ -186,6 +188,10 @@
 			1.5MB => 3:51min @ 3G
 		</div>
 		<img src="pictures/wat.gif" />
+	</section>
+
+	<section class="slide">
+		<img src="pictures/inside.gif" class="height" />
 	</section>
 
 	<section class="slide">
@@ -245,7 +251,7 @@
 	</section>
 
 	<section class="slide full">
-		<pre>
+		<pre class="no-number">
 			<code>function(module, exports) { // CommonJS</code>
 			<code>	Object.defineProperty(exports, "__esModule", {</code>
 			<code>		value: true</code>
@@ -282,7 +288,7 @@
 	<section class="slide">
 		<h2>Tree Shaking</h2>
 		<ul>
-			<li class="next">Bundler usuwa <b>referencje</b> nieużywanego kodu</li>
+			<li>Bundler usuwa <b>referencje</b> nieużywanego kodu</li>
 			<li class="next">Minifikator usuwa kod</li>
 			<li class="next">Webpack 2.x + ES6 (import/export)</li>
 			<li class="next">Babel</li>
@@ -304,9 +310,9 @@
 	</section>
 
 	<section class="slide full">
-		<pre>
+		<pre class="no-number">
+			<code>// ES6</code>
 			<code>function(module, exports, __webpack_require__) {</code>
-			<code>	// ES6</code>
 			<code>	/* harmony export */ exports["cube"] = cube;</code>
 			<code>	/* unused harmony export square */;</code>
 			<code>	function square(x) {</code>
@@ -501,7 +507,7 @@
 			<tr class="next">
 				<td>Gzip</td>
 				<td>158KB (3,77%)</td>
-				<td>0:24sec</td>
+				<td>0:24min</td>
 			</tr>
 		</table>
 	</section>
@@ -510,7 +516,8 @@
 		<h2>Co wpływa na szybkość ładowania strony</h2>
 		<ul>
 			<li>Waga</li>
-			<li class="next"><b>Kondycja połączenia</b></li>
+			<li><b>Kondycja połączenia</b></li>
+			<li>Czas przetwarzania</li>
 		</ul>
 	</section>
 
@@ -526,6 +533,20 @@
 			<li class="next">Przeglądarka: Spoko, pobieram i zaraz pokaże go użytkownikowi.</li>
 		</ol>
 		<p class="note next">HTTP/1.1: co najwyżej 2 równoczesne połączenia per host</p>
+	</section>
+
+	<section class="slide">
+		<h2>Keep-Alive</h2>
+		<pre class="no-number">
+			<code class="mark">Keep-Alive: timeout=15, max=100</code>
+			<code></code>
+		</pre>
+		<ul>
+			<li class="next"><mark>timeout</mark> to czas (w sekundach) po jakim połączenie zostanie zamknięte jeśli nic nie zostanie wysłane</li>
+			<li class="next"><mark>max</mark> to maksymalna ilość żądań jakie klient może wykonać</li>
+			<li class="next">Oszczędzamy czas tylko na połączeniu, zasoby nie są pobierane równolegle</li>
+		</ul>
+		<p class="note next">Nginx potrafi utrzymać 10 000 połączeń przy pomocy zaledwie 2,5 MB RAM</p>
 	</section>
 
 	<section class="slide">
@@ -576,20 +597,6 @@
 	</section>
 
 	<section class="slide">
-		<h2>Keep-Alive</h2>
-		<pre class="no-number">
-			<code class="mark">Keep-Alive: timeout=15, max=100</code>
-			<code></code>
-		</pre>
-		<ul>
-			<li class="next"><mark>timeout</mark> to czas (w sekundach) po jakim połączenie zostanie zamknięte jeśli nic nie zostanie wysłane</li>
-			<li class="next"><mark>max</mark> to maksymalna ilość żądań jakie klient może wykonać</li>
-			<li class="next">Oszczędzamy czas tylko na połączeniu, zasoby nie są pobierane równolegle</li>
-		</ul>
-		<p class="note next">Nginx potrafi utrzymać 10 000 połączeń przy pomocy zaledwie 2,5 MB RAM</p>
-	</section>
-
-	<section class="slide">
 		<h2>Content Delivery Network</h2>
 		<ul>
 			<li class="next">Szybsze ładowanie zasobów</li>
@@ -611,7 +618,7 @@
 				<th>Optymalizacja</th>
 				<th>Czas dociagania</th>
 			</tr>
-			<tr>
+			<tr class="next">
 				<td>Brak</td>
 				<td>~0.8s - 0.9s</td>
 			</tr>
@@ -631,7 +638,7 @@
 		<ul>
 			<li>Waga</li>
 			<li>Kondycja połączenia</li>
-			<li class="next"><b>Czas parsowania</b></li>
+			<li><b>Czas parsowania</b></li>
 		</ul>
 	</section>
 
@@ -721,7 +728,7 @@
 
 	<section class="slide">
 		<h2>Lazy loading</h2>
-		<pre>
+		<pre class="no-number">
 			<code>const routes: Routes = [</code>
 			<code>	{ path: '', component: Component },</code>
 			<code>	{ </code>
@@ -743,11 +750,11 @@
 				<td>Brak</td>
 				<td>~5s</td>
 			</tr>
-			<tr class="mark">
+			<tr class="next">
 				<td>Prekompilacja</td>
 				<td>3sek (907KB)</td>
 			</tr>
-			<tr class="mark">
+			<tr class="next">
 				<td>Lazy load</td>
 				<td>~600ms (525KB)</td>
 			</tr>
@@ -775,10 +782,19 @@
 			</tr>
 			<tr class="next">
 				<td>+ optymalizacja skryptowania</td>
-				<td>~0.3s - 0.8s</td>
+				<td>~1s</td>
 			</tr>
 		</table>
 	</section>
+
+	<section class="slide">
+		<img src="pictures/full-opt.png" width="100%" />
+	</section>
+
+	<section class="slide">
+		<img src="pictures/cats.gif" class="height"/>
+	</section>
+
 
 	<section class="slide">
 		<h2>Linki</h2>
